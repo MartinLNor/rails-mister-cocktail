@@ -1,12 +1,17 @@
 <div class="home-banner">
-  <h1>Cocktail's Bar</h1>
+ <p>
+  <span id="banner-typed-text"></span>
+</p>
+ <%= link_to 'Add a new Cocktail', new_cocktail_path, class: 'btn btn-primary btn-lg'%>
 </div>
 <h1>Cocktail's List</h1>
 <div class="container">
   <div class="row">
     <% @cocktails.each do |cocktail| %>
       <div class="col-xs-12 col-sm-4">
-        <%= image_tag cocktail.image_url,width: 200,class:"card-img-top"%>
+        <div class="card-img-top image text-center">
+        <%= image_tag cocktail.image_url %>
+        </div>
         <div class="card-body">
           <div class="card-title text-center">
             <%= link_to cocktail.name, cocktail_path(cocktail)%>
@@ -16,4 +21,4 @@
     <% end %>
   </div>
 </div>
-<%= link_to 'Add a new Cocktail', new_cocktail_path, class: 'btn btn-primary btn-lg'%>
+

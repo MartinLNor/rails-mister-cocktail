@@ -9,4 +9,4 @@ function initUpdateNavbarOnScroll() {
   });
 }
 
-export default { initUpdateNavbarOnScroll };
+export { initUpdateNavbarOnScroll };

@@ -6,5 +6,10 @@
 //
 // To reference this file, add <%= javascript_pack_tag 'application' %> to the appropriate
 // layout file, like app/views/layouts/application.html.erb
-
+import { initUpdateNavbarOnScroll } from '../components/navbar';
+import { loadDynamicBannerText } from '../components/banner';
+import { bindSweetAlertButtonDemo } from '../components/banner';
 console.log('Hello World from Webpacker')
+initUpdateNavbarOnScroll();
+loadDynamicBannerText();
+bindSweetAlertButtonDemo();

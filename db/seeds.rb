@@ -17,3 +17,13 @@ ingredients = JSON.parse(serialized_ingredients)
 ingredients["drinks"].each do |ingredient|
   Ingredient.new(name: ingredient["strIngredient1"]).save
 end
+
+100.times do
+url2 = "https://www.thecocktaildb.com/api/json/v1/1/random.php"
+serialized_cocktails = open(url2).read
+cocktails = JSON.parse(serialized_cocktails)
+
+name = cocktails.first[1][0]["strDrink"]
+picture = cocktails.first[1][0]["strDrinkThumb"]
+Cocktail.new(name: name,image_url: picture).save
+end
